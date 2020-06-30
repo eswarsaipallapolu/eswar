@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<title>form</title>
+		<style>
+			body{
+				background-color: white;
+			}
+			table{
+				margin-left: 20px;
+			}
+			</style>
+			<script>
+				function formValidation(oEvent)
+				{ 
+					oEvent = oEvent || window.event;
+					var txtField = oEvent.target || oEvent.srcElement; 
+
+					var t1ck=true;
+					var msg=" ";
+					if(!document.getElementById("name").value.match(/^[A-Za-z]+$/) )
+					{ 
+						t1ck=false; 
+						alert("The name is not  accepted"+"\n"+"please enter only alphabets");
+					}
+					if(!document.getElementById("num").value.match(/^[7-9][0-9]{9}$/))
+					{
+						t1ck=false;
+					}
+					if(!document.getElementById("html").checked && !document.getElementById("css").checked && !document.getElementById("java").checked)
+					{ t1ck=false;msg = msg + " Select your interests";}
+					
+
+
+					if(t1ck){document.getElementById("submit1").disabled = false; }
+					else{document.getElementById("submit1").disabled = true; }
+				}
+				window.onload = function ()
+				{ 
+
+					var btnSignUp = document.getElementById("submit1"); 
+
+					var name = document.getElementById("name"); 
+					var num = document.getElementById("num"); 
+					var html = document.getElementById("html"); 
+					var css=document.getElementById("css");
+					var java=document.getElementById("java");
+
+					var t1ck=false;
+					document.getElementById("submit1").disabled = true;
+					name.onkeyup = formValidation;
+					num.onkeyup=formValidation;
+					html.onclick = formValidation; 
+					css.onclick = formValidation; 
+					java.onclick = formValidation; 
+				}
+
+			</script>
+	</head>
+	<body>
+		
+		<form method="get">
+		<table>
+			<tr>
+				<td colspan="2"> <b><u>MY FORM</u></b></td>
+			</tr>
+			<tr>
+				<td> First Name:</td>
+				<td><input type="text" id="name" name="nam" required/></td>
+			</tr>
+			<tr>
+				<td>Phone No:</td>
+				<td><input type="number" id="num" name="num" required placeholder="only 10 digit number is accepted"/></td>
+			</tr>
+			<tr>
+				<td>Reason for RDIP</td>
+				<td><input type="checkbox" id="html" name="html">HTML
+				<input type="checkbox" id="css" name="css">CSS
+				<input type="checkbox" id="java" name="java">JAVASCRIPT</td>
+				
+			</tr>
+			<tr>
+					<td><input type="submit" value="submit" id="submit1"/></td>
+					<td><input type="reset" value="reset"></td>
+
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

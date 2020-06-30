@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>home</title>
+		<style>
+			table th,td{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+				<h2><u>MY TABLE</u></h2>
+				<table   cellpadding="5" id="mytable">
+					
+					<tr>
+					<th>subjects</th>
+					<th>marks</th>
+					</tr>
+					<tr>
+					<td>COA</td>
+					<td>80</td>
+					</tr>
+					<tr>
+					<td>Management Science</td>
+					<td>77</td>
+					</tr>
+					<tr>
+					<td>DAA</td>
+					<td>85</td>
+					</tr>
+					<tr>
+					<td>Object Oriented Programming</td>
+					<td>86</td>
+					</tr>
+					<tr>
+					<td>Computer Graphics</td>
+					<td>88</td>
+					</tr>
+					
+				</table>
+				<br>
+				<form method="GET" action="#" name="form1">
+					Name:<input type="text" name="text1">
+					<input type="submit" value="submit" onclick="allLetter(document.form1.text1)">
+				</form>
+				<script>
+					var x=1,y=2;
+					var arr=[1,2,3,4,5];
+					console.log("x="+x+" "+"y="+y);
+					var n=arr[3].toString();
+					document.write("The value at index 3 is "+ n);
+					function allLetter(inputtxt)
+     			 	{ 
+						var letters = /^[A-Za-z]+$/;
+						if(inputtxt.value.match(letters))
+						{
+						alert("The name is accepted : "+inputtxt.value);
+						return true;
+						}
+						else
+						{
+						alert('Please input alphabet characters only');
+						return false;
+					}
+					}
+					function table1(){
+					var nor=document.getElementById("mytable").rows.length;
+					var sum=0;
+					for( var i=1;i<nor;i++)
+					{
+						var c = document.getElementById("mytable").rows[i].cells;
+						sum=sum+parseInt(c[1].innerHTML);
+					}
+					document.write("<br><br>");
+					document.write("sum = "+sum);
+					document.write("<br><br>");
+					document.write("avg = "+sum/(nor-1)+"<br><br>");
+					}
+					function math1()
+					{ 
+						document.write("<h1>Math Functions</h1>")
+						var power=Math.pow(2,3);
+						document.write("power = "+power+"<br>");
+						var square=Math.sqrt(9);
+						document.write("square of a num = "+square+"<br>");
+						var ab=Math.abs(-10);
+						document.write("absolute value = "+ab+"<br>");
+						var randomnum=Math.random();
+						document.write("Random number = "+randomnum+"<br>");
+						var ceil1=Math.ceil(randomnum);
+						document.write("ceil of random number = "+ceil1+"<br>");
+						var floor1=Math.floor(randomnum);
+						document.write("floor of a random number = "+floor1+"<br>");
+						var roundnum=Math.round(randomnum);
+						document.write("round of random number = "+roundnum+"<br>");
+						var trig=Math.sin(randomnum);
+						document.write("sin of a random number = "+trig+"<br>");
+					}
+					table1();
+					math1();
+			</script>
+	
+		
+	</body>
+</html>
