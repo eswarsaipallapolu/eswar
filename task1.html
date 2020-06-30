@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JAVA SCRIPT</title>
+    </head>
+    <body>
+        <p>Enter how many terms to be printed in Fibnacci Series</p>
+        <input type="text" id="text">
+        <button value="submit" onclick="fun1()">SUBMIT</button>
+        <h2> fibnacci series</h2>
+        <p id="message"></p>
+        <script>
+            function fun1()
+            {
+            var text=" ",a=0,b=1,temp;
+            var x=document.getElementById("text").value;
+            for( var i=0;i<x;i++)
+            {
+                if(i==0)
+                text += i + "<br>";
+                if(i==1)
+                text += i + "<br>";
+                if(i>=2)
+                {
+                    temp=a+b;
+                    text += temp + "<br>";
+                    a=b;
+                    b=temp;
+                }
+
+            }
+            document.getElementById("message").innerHTML=text;
+            }
+        </script>
+    </body>
+</html>

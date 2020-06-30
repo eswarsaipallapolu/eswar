@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Please input a number between 10 and 100:</p>
+
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">submit</button>
+<h4 id="message"></h4>
+<h4 id="message1"></h4>
+<script>
+function myFunction() {
+  var message, x;
+  message = document.getElementById("message");
+  message.innerHTML = "";
+  x = document.getElementById("demo").value;
+  try { 
+    switch(true)
+    {
+        case (x==""):
+         throw "isEmpty"
+         break;
+        case (x<10 || x>100): 
+        throw "Number should be between 10 and 100"
+        break;
+        case (x>=10 && x<=100): 
+        message.innerHTML="Input Number is :-"+x;
+        break;
+        default: 
+        message.innerHTML="enter a valid input";
+        break;
+    }
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+  finally
+  {
+    message1.innerHTML="The Task is completed";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
