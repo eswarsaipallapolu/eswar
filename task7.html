@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        fadein/fadeout
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <style>
+       .center
+        {
+            width: 500px;
+            height: 350px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);        }
+        .first
+        {
+            width:200px;
+            height: 100px;
+            background-color: blue;
+        }
+        .second
+        {
+            width:200px;
+            height: 100px;
+            background-color:orangered;
+           
+        }
+        .three
+        {
+            width:200px;
+            height: 100px;
+            background-color:green;
+        
+        }
+    </style>
+    </head>
+    <body>
+        <h1>FADE IN/FADE OUT</h1>
+        <hr>
+        <div class="center">
+        <div class="first"></div>
+        <br>
+        <div class="second"></div>
+        <br>
+        <div class="three"></div>
+        </div>
+        <button id="btn1">FADE IN</button>
+        <button id="btn2">FADE OUT</button>
+    <script>
+        $(document).ready(function()
+        {
+            $('#btn1').click(function()
+            {
+                $('.first').fadeIn('slow');
+                $('.second').fadeIn();
+                $('.three').fadeIn('3000');
+            });
+            $('#btn2').click(function()
+            {
+                $('.first').fadeOut();
+                $('.second').fadeOut();
+                $('.three').fadeOut();
+            });
+        });
+    </script>
+      </body>
+</html>

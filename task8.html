@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>get/post</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+    </head>
+    <body>   
+                <p id="change">click to get the data</p>
+                <button class="btn">CLICK</button>          
+             <script>
+                 $(document).ready(function()
+                 {
+                    $('.btn').click(function()
+                    {
+                       // $('#change').hide('slow');
+
+                       $.get("https://C:/Users/ADMIN/Desktop/sample/get.html",function(data,status)
+                       {
+
+                        alert("Data:-"+data+"\nstatus:-"+status);
+                       });
+
+                    });
+                 });
+             </script>
+             
+    </body>
+</html>

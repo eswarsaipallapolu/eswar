@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TOggle</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+        <style>
+            .div1
+            {
+                color:crimson;
+                background-color: silver;
+                font-style: italic;
+            }
+            .div2
+            {
+                color:blue;
+                background-color: grey;
+                font-style: oblique;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Example toggle</h1>
+        <hr>
+        <h2 class="div1">MY NAME IS ESWAR SAI</h2>
+        <h2 class="div2">I AM  STUDYING INFORMATION TECHNOLOGY</h2>
+        <button id="btn">Toggle</button>
+        <script>
+            $(document).ready(function()
+            {
+                $('#btn').click(function()
+                {
+                    $('.div1,.div2').toggle();
+                });
+            });
+        </script>
+    </body>
+</html>
